@@ -16,11 +16,13 @@ export function Logo({ variant = "mark" }: { variant?: "mark" | "lockup" }) {
   }
 
   return (
-    <span className="neo-sm relative block size-[52px] shrink-0 overflow-hidden bg-[#071433]">
+    <span className="neo-sm inline-flex shrink-0 bg-[#071433]">
       <img
         src="/craftvanta-logo.png"
-        alt=""
-        className="absolute top-[-14%] left-1/2 w-[205%] max-w-none -translate-x-1/2"
+        alt="Craftvanta"
+        width={1024}
+        height={1024}
+        className="h-[72px] w-[72px] object-contain"
       />
     </span>
   );

@@ -22,7 +22,7 @@ export function useScrollLock() {
   return ctx?.setLocked ?? (() => {});
 }
 
-const HEADER = 72;
+const HEADER = 96;
 
 const scrollListeners = new Set<(y: number) => void>();
 
@@ -173,7 +173,7 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
         style={{ transform: "scaleX(0)" }}
       />
       <div ref={rootRef}>
-        <div className="pt-[72px]">{children}</div>
+        <div className="pt-24">{children}</div>
       </div>
     </>
   );

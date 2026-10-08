@@ -31,10 +31,9 @@ export function Header() {
       >
         Skip to main content
       </a>
-      <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4">
-        <a href="/" className="flex items-center gap-2.5 font-display text-xl font-black tracking-tight">
+      <div className="mx-auto flex h-24 max-w-6xl items-center justify-between px-4">
+        <a href="/" className="flex items-center" aria-label="Craftvanta">
           <Logo />
-          <span>Craftvanta</span>
         </a>
 
         <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
