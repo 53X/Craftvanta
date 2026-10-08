@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { Reveal } from "@/components/reveal";
 
 const jobs = [
   { label: "Branding", tone: "bg-yellow" },
@@ -52,7 +53,7 @@ export function Contact() {
   return (
     <section id="start" className="scroll-mt-24 border-b-[3px] border-ink bg-yellow dot-grid-soft">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 md:py-24 lg:grid-cols-[0.85fr_1.15fr]">
-        <div>
+        <Reveal>
           <h2 className="font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
             Bring the rough idea.
           </h2>
@@ -65,8 +66,9 @@ export function Contact() {
               {EMAIL}
             </a>
           </p>
-        </div>
+        </Reveal>
 
+        <Reveal delay={0.08}>
         <form onSubmit={onSubmit} className="neo bg-white p-5 sm:p-6" noValidate>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Name" name="name" autoComplete="name" />
@@ -108,6 +110,7 @@ export function Contact() {
             Send the note →
           </button>
         </form>
+        </Reveal>
       </div>
     </section>
   );

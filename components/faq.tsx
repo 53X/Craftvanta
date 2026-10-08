@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { Reveal } from "@/components/reveal";
 
 const questions = [
   {
@@ -41,10 +42,12 @@ export function Faq() {
     <section id="faq" className="scroll-mt-24 border-b-[3px] border-ink bg-white">
       <div className="palette-bar h-2" aria-hidden />
       <div className="mx-auto max-w-3xl px-4 py-20 md:py-24">
-        <h2 className="font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
-          The questions worth asking.
-        </h2>
-        <div className="mt-8 border-[3px] border-ink">
+        <Reveal>
+          <h2 className="font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
+            The questions worth asking.
+          </h2>
+        </Reveal>
+        <Reveal delay={0.08} className="mt-8 border-[3px] border-ink">
           {questions.map((item, index) => {
             const expanded = open === index;
             return (
@@ -76,7 +79,7 @@ export function Faq() {
               </div>
             );
           })}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

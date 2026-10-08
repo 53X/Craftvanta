@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { Reveal } from "@/components/reveal";
 
 const looks = [
   {
@@ -49,20 +50,22 @@ export function Looks() {
   return (
     <section className="dot-grid-soft border-b-[3px] border-ink bg-mint">
       <div className="mx-auto max-w-6xl px-4 py-20 md:py-24">
-        <p className="font-display text-sm font-extrabold uppercase tracking-[0.16em]">Who it&apos;s for</p>
-        <h2 className="mt-3 max-w-3xl font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
-          Every business, dressed on purpose.
-        </h2>
-        <p className="mt-4 max-w-2xl text-lg">
-          A clinic, a shop, a local service, a studio. The mix changes. The way we work does not.
-        </p>
+        <Reveal>
+          <p className="font-display text-sm font-extrabold uppercase tracking-[0.16em]">Who it&apos;s for</p>
+          <h2 className="mt-3 max-w-3xl font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
+            Every business, dressed on purpose.
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg">
+            A clinic, a shop, a local service, a studio. The mix changes. The way we work does not.
+          </p>
+        </Reveal>
         <div className="mt-8 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="flex flex-col gap-3" role="tablist" aria-label="Example clients">
-            {looks.map((look) => {
+            {looks.map((look, index) => {
               const selected = look.id === active;
               return (
+                <Reveal key={look.id} delay={index * 0.06}>
                 <button
-                  key={look.id}
                   type="button"
                   role="tab"
                   aria-selected={selected}
@@ -74,10 +77,11 @@ export function Looks() {
                     {look.tags}
                   </span>
                 </button>
+                </Reveal>
               );
             })}
           </div>
-          <div className="relative min-h-80">
+          <Reveal delay={0.12} className="relative min-h-80">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.id}
@@ -95,7 +99,7 @@ export function Looks() {
                 <p className="mt-4 max-w-md text-lg leading-relaxed">{current.note}</p>
               </motion.div>
             </AnimatePresence>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

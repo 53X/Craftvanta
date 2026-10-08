@@ -47,10 +47,12 @@ export function Process() {
   return (
     <section id="process" className="scroll-mt-24 border-b-[3px] border-ink bg-yellow">
       <div className="mx-auto max-w-6xl px-4 py-20 md:py-24">
-        <p className="font-display text-sm font-extrabold uppercase tracking-[0.16em]">How it works</p>
-        <h2 className="mt-3 max-w-3xl font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
-          Blank brief. Finished brand.
-        </h2>
+        <Reveal>
+          <p className="font-display text-sm font-extrabold uppercase tracking-[0.16em]">How it works</p>
+          <h2 className="mt-3 max-w-3xl font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
+            Blank brief. Finished brand.
+          </h2>
+        </Reveal>
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <Reveal key={step.n} delay={index * 0.06} className="h-full">
@@ -66,7 +68,7 @@ export function Process() {
 
       <div className="border-t-[3px] border-ink bg-cyan">
         <div className="mx-auto grid max-w-6xl gap-8 px-4 py-20 md:grid-cols-2 md:py-24">
-          <div>
+          <Reveal>
             <h2 className="font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl">
               Half-made brands
               <span className="marker"> stop here.</span>
@@ -74,8 +76,9 @@ export function Process() {
             <p className="mt-4 max-w-md text-lg text-ink/80">
               Marketing falls apart in the gaps between the site, the posts, and the ads. We hold those pieces together.
             </p>
-          </div>
+          </Reveal>
           <div className="grid gap-4 sm:grid-cols-2">
+            <Reveal>
             <div className="border-[3px] border-ink bg-paper p-4">
               <h3 className="font-display text-lg font-black">The slow way</h3>
               <ul className="mt-3 space-y-3 text-sm">
@@ -87,6 +90,8 @@ export function Process() {
                 ))}
               </ul>
             </div>
+            </Reveal>
+            <Reveal delay={0.08}>
             <div className="border-[3px] border-ink bg-mint p-4">
               <h3 className="font-display text-lg font-black">With Craftvanta</h3>
               <ul className="mt-3 space-y-3 text-sm font-medium">
@@ -98,6 +103,7 @@ export function Process() {
                 ))}
               </ul>
             </div>
+            </Reveal>
           </div>
         </div>
       </div>

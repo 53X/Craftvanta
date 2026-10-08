@@ -43,13 +43,15 @@ export function Services() {
   return (
     <section id="services" className="dot-grid scroll-mt-24 border-b-[3px] border-ink">
       <div className="mx-auto max-w-6xl px-4 py-20 md:py-24">
-        <p className="font-display text-sm font-extrabold uppercase tracking-[0.16em]">Services</p>
-        <h2 className="mt-3 max-w-3xl font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
-          The brand, built loud.
-        </h2>
-        <p className="mt-4 max-w-2xl text-lg text-ink/80">
-          Six jobs. Hire the identity, the site, the content, or the ads. Or run them so they all say the same thing.
-        </p>
+        <Reveal>
+          <p className="font-display text-sm font-extrabold uppercase tracking-[0.16em]">Services</p>
+          <h2 className="mt-3 max-w-3xl font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
+            The brand, built loud.
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-ink/80">
+            Six jobs. Hire the identity, the site, the content, or the ads. Or run them so they all say the same thing.
+          </p>
+        </Reveal>
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Reveal key={service.title} delay={index * 0.05} className="h-full">

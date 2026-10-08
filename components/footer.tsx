@@ -1,4 +1,5 @@
 import { Logo } from "@/components/logo";
+import { Reveal } from "@/components/reveal";
 
 const columns = [
   {
@@ -26,16 +27,16 @@ export function Footer() {
     <footer className="bg-paper">
       <div className="palette-bar h-2" aria-hidden />
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
-        <div>
+        <Reveal>
           <a href="/" className="inline-flex" aria-label="Craftvanta">
             <Logo variant="lockup" />
           </a>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink/80">
             A creative marketing agency for branding, websites, AI images and video, social, and ads.
           </p>
-        </div>
-        {columns.map((column) => (
-          <div key={column.title}>
+        </Reveal>
+        {columns.map((column, index) => (
+          <Reveal key={column.title} delay={0.08 * (index + 1)}>
             <h2 className="font-display text-sm font-black uppercase tracking-[0.14em]">{column.title}</h2>
             <ul className="mt-3 space-y-2">
               {column.links.map((link) => (
@@ -52,17 +53,17 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         ))}
       </div>
-      <div className="border-t-[3px] border-ink">
+      <Reveal className="border-t-[3px] border-ink">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4 text-sm">
           <p>© 2026 Craftvanta. All rights reserved.</p>
           <a className="font-display font-bold" href="mailto:hello@craftvanta.com">
             hello@craftvanta.com
           </a>
         </div>
-      </div>
+      </Reveal>
     </footer>
   );
 }

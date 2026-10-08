@@ -41,13 +41,15 @@ export function Work() {
     <section id="work" className="scroll-mt-24 border-b-[3px] border-ink bg-paper text-ink">
       <div className="palette-bar h-2" aria-hidden />
       <div className="mx-auto max-w-6xl px-4 py-20 md:py-24">
-        <p className="font-display text-sm font-extrabold uppercase tracking-[0.16em] text-pink">Portfolio</p>
-        <h2 className="mt-3 max-w-3xl font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
-          Brands, out in the open.
-        </h2>
-        <p className="mt-4 max-w-2xl text-lg text-ink/80">
-          Selected work from Craftvanta. Three sites are live. Open them.
-        </p>
+        <Reveal>
+          <p className="font-display text-sm font-extrabold uppercase tracking-[0.16em] text-pink">Portfolio</p>
+          <h2 className="mt-3 max-w-3xl font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
+            Brands, out in the open.
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-ink/80">
+            Selected work from Craftvanta. Three sites are live. Open them.
+          </p>
+        </Reveal>
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {pieces.map((piece, index) => (
             <Reveal key={piece.name} delay={index * 0.08} className="h-full">

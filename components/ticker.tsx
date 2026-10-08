@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/reveal";
+
 const items = [
   { label: "Branding", dot: "bg-yellow" },
   { label: "Identity", dot: "bg-pink" },
@@ -14,7 +16,7 @@ const items = [
 export function Ticker() {
   const row = [...items, ...items];
   return (
-    <div className="overflow-hidden border-b-[3px] border-ink bg-ink text-white">
+    <Reveal className="overflow-hidden border-b-[3px] border-ink bg-ink text-white">
       <div className="ticker-track flex w-max py-4">
         {row.map((item, index) => (
           <span key={`${item.label}-${index}`} className="flex items-center gap-4 px-4 font-display text-lg font-extrabold">
@@ -23,6 +25,6 @@ export function Ticker() {
           </span>
         ))}
       </div>
-    </div>
+    </Reveal>
   );
 }

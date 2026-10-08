@@ -69,6 +69,7 @@ export function Hero() {
           </motion.ul>
         </motion.div>
 
+        <motion.div variants={rise} initial="hidden" animate="show">
         <div ref={boardRef} className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div className="neo rotate-[-1.5deg] bg-white">
             <div className="flex items-center gap-2 border-b-[3px] border-ink bg-paper px-3 py-2">
@@ -111,6 +112,7 @@ export function Hero() {
             Then we launch it
           </div>
         </div>
+        </motion.div>
       </div>
     </section>
   );
