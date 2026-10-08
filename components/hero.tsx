@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { subscribeSmoothScroll } from "@/components/smooth-scroll";
 
 const rise = {
   hidden: { opacity: 0, y: 22 },
@@ -15,6 +17,16 @@ const checks = [
 ];
 
 export function Hero() {
+  const boardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    return subscribeSmoothScroll((y) => {
+      const board = boardRef.current;
+      if (!board) return;
+      board.style.transform = `translate3d(0, ${y * 0.06}px, 0)`;
+    });
+  }, []);
+
   return (
     <section className="dot-grid relative overflow-hidden border-b-[3px] border-ink">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
@@ -55,7 +67,7 @@ export function Hero() {
           </motion.ul>
         </motion.div>
 
-        <div data-parallax="0.06" className="relative mx-auto w-full max-w-md lg:max-w-none">
+        <div ref={boardRef} className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div className="neo rotate-[-1.5deg] bg-white">
             <div className="flex items-center gap-2 border-b-[3px] border-ink bg-paper px-3 py-2">
               <span className="size-3 border-[2px] border-ink bg-pink" />

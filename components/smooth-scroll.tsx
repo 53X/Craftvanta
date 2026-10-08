@@ -24,6 +24,15 @@ export function useScrollLock() {
 
 const HEADER = 72;
 
+const scrollListeners = new Set<(y: number) => void>();
+
+export function subscribeSmoothScroll(listener: (y: number) => void) {
+  scrollListeners.add(listener);
+  return () => {
+    scrollListeners.delete(listener);
+  };
+}
+
 function offsetWithin(node: HTMLElement, root: HTMLElement) {
   let y = 0;
   let el: HTMLElement | null = node;
@@ -87,11 +96,7 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
 
       const max = Math.max(1, root.offsetHeight - window.innerHeight);
       if (bar) bar.style.transform = `scaleX(${Math.min(1, current / max)})`;
-
-      root.querySelectorAll<HTMLElement>("[data-parallax]").forEach((node) => {
-        const speed = Number(node.dataset.parallax || "0");
-        node.style.transform = `translate3d(0, ${current * speed}px, 0)`;
-      });
+      scrollListeners.forEach((listener) => listener(current));
     };
 
     root.style.position = "fixed";
