@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #111111;
+  --color-paper: #f4f0ea;
+  --color-yellow: #ffe135;
+  --color-pink: #ff3d82;
+  --color-blue: #2563eb;
+  --color-green: #22c55e;
+  --color-orange: #ff6b2b;
+  --color-mint: #d1fae5;
+  --color-line: #111111;
+  --font-sans: var(--font-dm), "DM Sans", sans-serif;
+  --font-display: var(--font-outfit), Outfit, sans-serif;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #ffe135;
+  color: #111111;
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(17, 17, 17, 0.16) 1.15px, transparent 1.15px);
+  background-size: 22px 22px;
+}
+
+.dot-grid-soft {
+  background-image: radial-gradient(rgba(17, 17, 17, 0.12) 1.15px, transparent 1.15px);
+  background-size: 18px 18px;
+}
+
+.neo {
+  border: 3px solid #111111;
+  box-shadow: 6px 6px 0 #111111;
+}
+
+.neo-sm {
+  border: 3px solid #111111;
+  box-shadow: 4px 4px 0 #111111;
+}
+
+.press {
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.press:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 #111111;
+}
+
+.press:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 0 #111111;
+}
+
+.ticker-track {
+  animation: ticker 28s linear infinite;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ticker-track {
+    animation: none;
+  }
+
+  .press {
+    transition: none;
+  }
+}
+
+.marker {
+  background-image: linear-gradient(#ffe135, #ffe135);
+  background-repeat: no-repeat;
+  background-size: 100% 0.42em;
+  background-position: 0 82%;
+}
