@@ -54,7 +54,7 @@ export function Work() {
           {pieces.map((piece, index) => (
             <Reveal key={piece.name} delay={index * 0.08} className="h-full">
               <article className="neo flex h-full flex-col bg-white text-ink">
-                <div className="h-96 shrink-0 border-b-[3px] border-ink">
+                <div className="h-64 shrink-0 border-b-[3px] border-ink">
                   {piece.frame === "agent" ? <AgentFrame /> : null}
                   {piece.frame === "shop" ? <ShopFrame /> : null}
                   {piece.frame === "finance" ? <FinanceFrame /> : null}
@@ -99,16 +99,6 @@ function AgentFrame() {
       <p className="mt-3 min-h-[5.7rem] max-w-sm font-display text-3xl font-black leading-[0.95]">
         your ai front desk.
       </p>
-      <p className="mt-3 max-w-sm text-sm text-white/80">
-        Routine calls handled. A warm handoff when it matters. For the team, not instead of them.
-      </p>
-      <div className="mt-auto flex flex-wrap gap-2 pt-4 text-xs font-bold">
-        {["Phone", "WhatsApp", "Email", "17 languages"].map((item) => (
-          <span key={item} className="border border-white/40 px-2 py-1">
-            {item}
-          </span>
-        ))}
-      </div>
     </div>
   );
 }
@@ -120,14 +110,6 @@ function ShopFrame() {
       <p className="mt-3 min-h-[5.7rem] max-w-sm font-display text-3xl font-black leading-[0.95]">
         Premium comfort for precious little ones.
       </p>
-      <p className="mt-3 max-w-sm text-sm">Soft all day, from the first feed to the last cuddle.</p>
-      <div className="mt-auto flex flex-wrap gap-2 pt-4 text-xs font-bold">
-        {["Rompers", "Sets", "Sleepwear", "Winter wear"].map((item) => (
-          <span key={item} className="border-[3px] border-ink bg-white px-2 py-1">
-            {item}
-          </span>
-        ))}
-      </div>
     </div>
   );
 }
@@ -139,16 +121,6 @@ function FinanceFrame() {
       <p className="mt-3 min-h-[5.7rem] max-w-sm font-display text-3xl font-black leading-[0.95]">
         Clarity for the books.
       </p>
-      <p className="mt-3 max-w-sm text-sm text-white/85">
-        Tax, GST, and company work, written so a founder can see the next step.
-      </p>
-      <div className="mt-auto flex flex-wrap gap-2 pt-4 text-xs font-bold">
-        {["Income tax", "GST", "Accounting", "Virtual CFO"].map((item) => (
-          <span key={item} className="border border-white/50 bg-white/10 px-2 py-1">
-            {item}
-          </span>
-        ))}
-      </div>
     </div>
   );
 }
