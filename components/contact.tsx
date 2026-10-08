@@ -3,12 +3,12 @@
 import { FormEvent, useState } from "react";
 
 const jobs = [
-  "Branding",
-  "Website building",
-  "Website optimization",
-  "AI images and video",
-  "Facebook and Instagram",
-  "Google and Meta ads",
+  { label: "Branding", tone: "bg-yellow" },
+  { label: "Website building", tone: "bg-pink text-white" },
+  { label: "Website optimization", tone: "bg-blue text-white" },
+  { label: "AI images and video", tone: "bg-violet text-white" },
+  { label: "Facebook and Instagram", tone: "bg-green" },
+  { label: "Google and Meta ads", tone: "bg-orange text-white" },
 ];
 
 const EMAIL = "hello@craftvanta.com";
@@ -79,9 +79,9 @@ export function Contact() {
             <legend className="font-display text-sm font-extrabold">What do you need?</legend>
             <div className="mt-2 grid gap-2 sm:grid-cols-2">
               {jobs.map((job) => (
-                <label key={job} className="flex items-center gap-2 border-[3px] border-ink bg-paper px-3 py-2 text-sm font-medium">
-                  <input type="checkbox" name="job" value={job} className="size-4 accent-ink" />
-                  {job}
+                <label key={job.label} className={`flex items-center gap-2 border-[3px] border-ink px-3 py-2 text-sm font-medium ${job.tone}`}>
+                  <input type="checkbox" name="job" value={job.label} className="size-4 accent-ink" />
+                  {job.label}
                 </label>
               ))}
             </div>

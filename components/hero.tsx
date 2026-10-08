@@ -50,15 +50,17 @@ export function Hero() {
             </a>
             <a
               href="/work"
-              className="neo press bg-white px-5 py-3 font-display text-lg font-extrabold"
+              className="neo press bg-pink px-5 py-3 font-display text-lg font-extrabold text-white"
             >
               See the work
             </a>
           </motion.div>
           <motion.ul variants={rise} className="mt-8 space-y-3">
-            {checks.map((item) => (
+            {checks.map((item, index) => (
               <li key={item} className="flex items-start gap-3 text-[15px] font-medium md:text-base">
-                <span className="mt-0.5 grid size-6 shrink-0 place-items-center border-[3px] border-ink bg-green text-xs font-black">
+                <span
+                  className={`mt-0.5 grid size-6 shrink-0 place-items-center border-[3px] border-ink text-xs font-black ${["bg-green", "bg-pink text-white", "bg-cyan", "bg-orange text-white"][index]}`}
+                >
                   ✓
                 </span>
                 {item}
@@ -105,7 +107,7 @@ export function Hero() {
           <div className="neo-sm absolute -left-3 -top-4 hidden bg-orange px-3 py-2 font-display text-sm font-extrabold text-white sm:block">
             Logo in review
           </div>
-          <div className="neo-sm absolute -bottom-4 -right-2 bg-ink px-3 py-2 font-display text-sm font-extrabold text-yellow">
+          <div className="neo-sm absolute -bottom-4 -right-2 bg-violet px-3 py-2 font-display text-sm font-extrabold text-white">
             Then we launch it
           </div>
         </div>

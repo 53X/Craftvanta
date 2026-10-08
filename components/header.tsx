@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { Logo } from "@/components/logo";
 import { useScrollLock } from "@/components/smooth-scroll";
 
 const links = [
@@ -23,6 +24,7 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b-[3px] border-ink bg-paper/95 backdrop-blur-sm">
+      <div className="palette-bar absolute inset-x-0 top-0 h-1.5" aria-hidden />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-yellow focus:px-3 focus:py-2 focus:font-display focus:font-bold"
@@ -31,10 +33,8 @@ export function Header() {
       </a>
       <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4">
         <a href="/" className="flex items-center gap-2.5 font-display text-xl font-black tracking-tight">
-          <span className="grid size-8 place-items-center border-[3px] border-ink bg-yellow text-sm font-black">
-            C
-          </span>
-          Craftvanta
+          <Logo />
+          <span>Craftvanta</span>
         </a>
 
         <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">

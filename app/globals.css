@@ -9,6 +9,8 @@
   --color-green: #22c55e;
   --color-orange: #ff6b2b;
   --color-mint: #d1fae5;
+  --color-violet: #7c3aed;
+  --color-cyan: #06b6d4;
   --color-line: #111111;
   --font-sans: var(--font-dm), "DM Sans", sans-serif;
   --font-display: var(--font-outfit), Outfit, sans-serif;
@@ -95,4 +97,18 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 0.42em;
   background-position: 0 82%;
+}
+
+.palette-bar {
+  background: linear-gradient(
+    90deg,
+    #ffe135 0% 12.5%,
+    #ff3d82 12.5% 25%,
+    #2563eb 25% 37.5%,
+    #22c55e 37.5% 50%,
+    #ff6b2b 50% 62.5%,
+    #7c3aed 62.5% 75%,
+    #06b6d4 75% 87.5%,
+    #d1fae5 87.5% 100%
+  );
 }

@@ -5,7 +5,7 @@ const steps = [
     n: "01",
     title: "Tell us the job",
     body: "What you sell, who it is for, and how the brand should feel. A new identity, a site, content, social, ads, or the lot.",
-    tone: "bg-white",
+    tone: "bg-green",
   },
   {
     n: "02",
@@ -17,7 +17,7 @@ const steps = [
     n: "03",
     title: "We make it",
     body: "The site, the images, the videos, the captions. You review. We revise. Nothing goes live half-finished.",
-    tone: "bg-white",
+    tone: "bg-orange text-white",
   },
   {
     n: "04",
@@ -64,7 +64,7 @@ export function Process() {
         </div>
       </div>
 
-      <div className="border-t-[3px] border-ink bg-white">
+      <div className="border-t-[3px] border-ink bg-cyan">
         <div className="mx-auto grid max-w-6xl gap-8 px-4 py-20 md:grid-cols-2 md:py-24">
           <div>
             <h2 className="font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl">

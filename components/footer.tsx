@@ -1,3 +1,5 @@
+import { Logo } from "@/components/logo";
+
 const columns = [
   {
     title: "Agency",
@@ -14,6 +16,7 @@ const columns = [
     links: [
       { href: "https://agentomatic.in", label: "Agentomatic", external: true },
       { href: "https://bsbasil.vercel.app", label: "Bsbasil", external: true },
+      { href: "https://www.taxsimpl.com", label: "TaxSimpl", external: true },
     ],
   },
 ];
@@ -21,11 +24,11 @@ const columns = [
 export function Footer() {
   return (
     <footer className="bg-paper">
+      <div className="palette-bar h-2" aria-hidden />
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <a href="/" className="flex items-center gap-2.5 font-display text-xl font-black">
-            <span className="grid size-8 place-items-center border-[3px] border-ink bg-yellow text-sm">C</span>
-            Craftvanta
+          <a href="/" className="inline-flex" aria-label="Craftvanta">
+            <Logo variant="lockup" />
           </a>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink/80">
             A creative marketing agency for branding, websites, AI images and video, social, and ads.

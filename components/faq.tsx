@@ -39,6 +39,7 @@ export function Faq() {
 
   return (
     <section id="faq" className="scroll-mt-24 border-b-[3px] border-ink bg-white">
+      <div className="palette-bar h-2" aria-hidden />
       <div className="mx-auto max-w-3xl px-4 py-20 md:py-24">
         <h2 className="font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
           The questions worth asking.
