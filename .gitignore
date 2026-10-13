@@ -42,3 +42,6 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# local Cursor agents, rules, and skills (kept on disk across branches)
+.cursor/
