@@ -1,16 +1,14 @@
 import { Reveal } from "@/components/reveal";
 
-const pieces = [
+export const pieces = [
   {
     name: "Agentomatic",
     url: "https://agentomatic.in",
     host: "agentomatic.in",
     kind: "AI SaaS",
-    tag: "bg-violet text-white",
+    tag: "bg-cyan",
     summary:
-      "An AI front desk that picks up phone, WhatsApp, and email, then hands the thread to a person when it matters. The site says that in one breath.",
-    points: ["Product story", "Clear offer", "Multi-channel front desk"],
-    frame: "agent",
+      "AI SaaS. The live site says what the product does: an AI front desk for the team, with a handoff to a person. Open agentomatic.in.",
   },
   {
     name: "Bsbasil",
@@ -19,9 +17,7 @@ const pieces = [
     kind: "E-commerce",
     tag: "bg-pink text-white",
     summary:
-      "Premium baby clothes for 0–3 years. Soft product pages, shopping by age, and a storefront that feels as careful as the clothes.",
-    points: ["Shop by age", "Rompers to winter wear", "Calm product story"],
-    frame: "shop",
+      "E-commerce. Baby clothes for ages 0–3. The live shop is organized by age, from rompers to winter wear. Open bsbasil.vercel.app.",
   },
   {
     name: "TaxSimpl",
@@ -30,11 +26,26 @@ const pieces = [
     kind: "Finance",
     tag: "bg-green",
     summary:
-      "A financial site for tax, GST, accounting, and advisory. The offer is plain: compliance that stays on time, for founders and growing businesses.",
-    points: ["Income tax", "GST and company work", "Virtual CFO"],
-    frame: "finance",
+      "Finance. Tax, GST, accounting, and advisory, including Virtual CFO, on the live site. Open taxsimpl.com.",
   },
 ];
+
+export function LiveSiteFrame({ host }: { host: string }) {
+  return (
+    <div className="border-b-[3px] border-ink bg-paper">
+      <div className="flex items-center gap-2 border-b-[3px] border-ink bg-white px-3 py-2">
+        <span className="size-2.5 shrink-0 border-2 border-ink bg-white" aria-hidden />
+        <span className="size-2.5 shrink-0 border-2 border-ink bg-white" aria-hidden />
+        <span className="size-2.5 shrink-0 border-2 border-ink bg-yellow" aria-hidden />
+        <span className="ml-1 truncate font-display text-xs font-bold">{host}</span>
+      </div>
+      <div className="px-4 py-6">
+        <p className="break-words font-display text-2xl font-black leading-tight">{host}</p>
+        <p className="mt-2 text-sm font-medium">Live site.</p>
+      </div>
+    </div>
+  );
+}
 
 export function Work() {
   return (
@@ -54,33 +65,24 @@ export function Work() {
           {pieces.map((piece, index) => (
             <Reveal key={piece.name} delay={index * 0.08} className="h-full">
               <article className="neo flex h-full flex-col bg-white text-ink">
-                <div className="h-64 shrink-0 border-b-[3px] border-ink">
-                  {piece.frame === "agent" ? <AgentFrame /> : null}
-                  {piece.frame === "shop" ? <ShopFrame /> : null}
-                  {piece.frame === "finance" ? <FinanceFrame /> : null}
-                </div>
-                <div className="flex h-96 shrink-0 flex-col p-5">
+                <LiveSiteFrame host={piece.host} />
+                <div className="flex flex-1 flex-col p-5">
                   <div className="flex flex-wrap items-center gap-2">
                     <h3 className="font-display text-3xl font-black">{piece.name}</h3>
                     <span className={`border-[3px] border-ink px-2 py-0.5 font-display text-xs font-black ${piece.tag}`}>
                       {piece.kind}
                     </span>
                   </div>
+                  <p className="mt-2 font-display text-sm font-bold">{piece.host}</p>
                   <p className="mt-3 text-[15px] leading-relaxed">{piece.summary}</p>
-                  <ul className="mt-4 flex flex-wrap gap-2">
-                    {piece.points.map((point) => (
-                      <li key={point} className="border-[3px] border-ink bg-paper px-2 py-1 text-sm font-medium">
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
                   <a
                     href={piece.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="neo-sm press mt-auto inline-flex w-fit bg-ink px-4 py-2 font-display font-extrabold text-yellow"
+                    className="neo-sm press mt-6 inline-flex w-fit bg-ink px-4 py-2 font-display font-extrabold text-yellow focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4"
                   >
                     Visit {piece.host} →
+                    <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 </div>
               </article>
@@ -89,38 +91,5 @@ export function Work() {
         </div>
       </div>
     </section>
-  );
-}
-
-function AgentFrame() {
-  return (
-    <div className="flex h-full flex-col bg-ink p-5 text-white sm:p-6">
-      <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-cyan">agentomatic</p>
-      <p className="mt-3 min-h-[5.7rem] max-w-sm font-display text-3xl font-black leading-[0.95]">
-        your ai front desk.
-      </p>
-    </div>
-  );
-}
-
-function ShopFrame() {
-  return (
-    <div className="flex h-full flex-col bg-[#f6efe6] p-5 text-ink sm:p-6">
-      <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-pink">Bsbasil · 0–3 years</p>
-      <p className="mt-3 min-h-[5.7rem] max-w-sm font-display text-3xl font-black leading-[0.95]">
-        Premium comfort for precious little ones.
-      </p>
-    </div>
-  );
-}
-
-function FinanceFrame() {
-  return (
-    <div className="flex h-full flex-col bg-blue p-5 text-white sm:p-6">
-      <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-yellow">taxsimpl</p>
-      <p className="mt-3 min-h-[5.7rem] max-w-sm font-display text-3xl font-black leading-[0.95]">
-        Clarity for the books.
-      </p>
-    </div>
   );
 }

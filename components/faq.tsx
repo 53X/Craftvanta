@@ -23,7 +23,7 @@ const questions = [
   },
   {
     q: "Which social accounts do you handle?",
-    a: "Facebook and Instagram. That means the calendar, the captions, the creative, and replies. Other networks can be talked through if you need them.",
+    a: "Facebook and Instagram. That means the calendar, the captions, the creative, and replies. Facebook and Instagram are the accounts we run.",
   },
   {
     q: "How do the ads work?",

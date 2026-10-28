@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/logo";
 import { useScrollLock } from "@/components/smooth-scroll";
@@ -32,9 +33,9 @@ export function Header() {
         Skip to main content
       </a>
       <div className="mx-auto flex h-24 max-w-6xl items-center justify-between px-4">
-        <a href="/" className="flex items-center" aria-label="Craftvanta">
+        <Link href="/" className="flex items-center" aria-label="Craftvanta">
           <Logo />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
           {links.map((link) => (
@@ -48,12 +49,12 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <a
+          <Link
             href="/#start"
             className="neo-sm press bg-yellow px-4 py-2 font-display text-[15px] font-extrabold"
           >
             Start a project →
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -84,13 +85,13 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <a
+            <Link
               href="/#start"
               onClick={() => setOpen(false)}
               className="neo press bg-yellow px-4 py-3 text-center font-display text-lg font-extrabold"
             >
               Start a project →
-            </a>
+            </Link>
           </nav>
         </div>
       ) : null}

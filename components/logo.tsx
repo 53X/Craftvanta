@@ -1,28 +1,14 @@
 export function Logo({ variant = "mark" }: { variant?: "mark" | "lockup" }) {
   const lockup = variant === "lockup";
 
-  if (lockup) {
-    return (
-      <span className="neo inline-flex bg-white p-2">
-        <img
-          src="/craftvanta-logo.png"
-          alt="Craftvanta"
-          width={1024}
-          height={1024}
-          className="h-40 w-40 object-cover"
-        />
-      </span>
-    );
-  }
-
   return (
-    <span className="neo-sm inline-flex shrink-0 bg-[#071433]">
+    <span className={lockup ? "neo inline-flex bg-white p-2" : "neo-sm inline-flex shrink-0 bg-white"}>
       <img
         src="/craftvanta-logo.png"
         alt="Craftvanta"
         width={1024}
         height={1024}
-        className="h-[72px] w-[72px] object-contain"
+        className={lockup ? "h-40 w-40 object-contain" : "h-[72px] w-[72px] object-contain"}
       />
     </span>
   );
