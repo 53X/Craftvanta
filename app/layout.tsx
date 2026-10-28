@@ -17,16 +17,18 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const description =
+  "One studio for the look and the launch. Branding, websites, AI images and video, Facebook and Instagram, Google and Meta ads.";
+
 export const metadata: Metadata = {
   title: {
-    default: "Craftvanta — Creative marketing agency",
+    default: "Craftvanta — Creative and digital marketing agency.",
     template: "%s — Craftvanta",
   },
-  description:
-    "Craftvanta is a creative marketing agency for branding, websites, AI images and video, Facebook and Instagram, and Google and Meta ads.",
+  description,
   openGraph: {
-    title: "Craftvanta — Creative marketing agency",
-    description: "Branding, websites, content, social, and ads. One agency.",
+    title: "Craftvanta — Creative and digital marketing agency.",
+    description,
     type: "website",
   },
 };

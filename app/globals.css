@@ -99,6 +99,58 @@ body {
   background-position: 0 82%;
 }
 
+.marker-draw {
+  background-size: 0% 0.42em;
+  animation: marker-draw 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+}
+
+.studio-stamp {
+  animation: studio-stamp 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.studio-stamp-1 {
+  animation-delay: 0.95s;
+}
+
+.studio-stamp-2 {
+  animation-delay: 1.12s;
+}
+
+.studio-stamp-3 {
+  animation-delay: 1.29s;
+}
+
+@keyframes marker-draw {
+  to {
+    background-size: 100% 0.42em;
+  }
+}
+
+@keyframes studio-stamp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -22px, 0) scale(1.08);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marker-draw {
+    animation: none;
+    background-size: 100% 0.42em;
+  }
+
+  .studio-stamp,
+  .studio-stamp-1,
+  .studio-stamp-2,
+  .studio-stamp-3 {
+    animation: none;
+  }
+}
+
 .palette-bar {
   background: linear-gradient(
     90deg,

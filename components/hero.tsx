@@ -1,61 +1,40 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import { subscribeSmoothScroll } from "@/components/smooth-scroll";
-
-const rise = {
-  hidden: { opacity: 0, y: 22 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const } },
-};
+import Link from "next/link";
 
 const checks = [
   "A brand people can name, picture, and repeat",
-  "Sites built new, or sharpened until they convert",
+  "Sites built new, or tuned so the offer is easy to find",
   "AI images and video that look like this brand",
   "Facebook, Instagram, Google, and Meta, still on-brand",
 ];
 
 export function Hero() {
-  const boardRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    return subscribeSmoothScroll((y) => {
-      const board = boardRef.current;
-      if (!board) return;
-      board.style.transform = `translate3d(0, ${y * 0.06}px, 0)`;
-    });
-  }, []);
-
   return (
     <section className="dot-grid relative overflow-hidden border-b-[3px] border-ink">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
-        <motion.div initial="hidden" animate="show" variants={{ show: { transition: { staggerChildren: 0.08 } } }}>
-          <motion.p variants={rise} className="mb-5 inline-flex items-center gap-2 border-[3px] border-ink bg-white px-3 py-1 font-display text-sm font-bold">
+        <div>
+          <p className="mb-5 inline-flex items-center gap-2 border-[3px] border-ink bg-white px-3 py-1 font-display text-sm font-bold">
             <span className="size-2.5 bg-pink" aria-hidden />
-            Creative marketing agency
-          </motion.p>
-          <motion.h1 variants={rise} className="font-display text-[3.15rem] font-black leading-[0.92] tracking-tight sm:text-7xl lg:text-[5.4rem]">
-            Make them
+            Creative and digital marketing agency
+          </p>
+          <h1 className="max-w-xl font-display text-[2.7rem] font-black leading-[0.92] tracking-tight sm:text-6xl lg:max-w-none lg:text-[4.35rem]">
+            One studio for
             <br />
-            <span className="marker">look twice.</span>
-          </motion.h1>
-          <motion.p variants={rise} className="mt-6 max-w-xl text-lg leading-relaxed text-ink/80 md:text-xl">
-            Branding, websites, AI images and video, then Facebook, Instagram, Google, and Meta.
-            The look and the launch, from one agency.
-          </motion.p>
-          <motion.div variants={rise} className="mt-8 flex flex-wrap items-center gap-3">
-            <a href="/#start" className="neo press bg-yellow px-5 py-3 font-display text-lg font-extrabold">
+            the look and the
+            <br />
+            <span className="marker marker-draw">launch.</span>
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/80 md:text-xl">
+            Branding and websites, then the posts and ads that match. Facebook, Instagram, Google, and Meta. Bring the rough idea.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Link href="/#start" scroll={false} className="neo press bg-yellow px-5 py-3 font-display text-lg font-extrabold">
               Start a project →
-            </a>
-            <a
-              href="/work"
-              className="neo press bg-pink px-5 py-3 font-display text-lg font-extrabold text-white"
-            >
+            </Link>
+            <Link href="/work" className="neo press bg-white px-5 py-3 font-display text-lg font-extrabold">
               See the work
-            </a>
-          </motion.div>
-          <motion.ul variants={rise} className="mt-8 space-y-3">
+            </Link>
+          </div>
+          <ul className="mt-8 space-y-3">
             {checks.map((item, index) => (
               <li key={item} className="flex items-start gap-3 text-[15px] font-medium md:text-base">
                 <span
@@ -66,53 +45,49 @@ export function Hero() {
                 {item}
               </li>
             ))}
-          </motion.ul>
-        </motion.div>
+          </ul>
+        </div>
 
-        <motion.div variants={rise} initial="hidden" animate="show">
-        <div ref={boardRef} className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <div className="neo rotate-[-1.5deg] bg-white">
-            <div className="flex items-center gap-2 border-b-[3px] border-ink bg-paper px-3 py-2">
-              <span className="size-3 border-[2px] border-ink bg-pink" />
-              <span className="size-3 border-[2px] border-ink bg-yellow" />
-              <span className="size-3 border-[2px] border-ink bg-green" />
-              <span className="ml-2 font-display text-xs font-bold">this-week.board</span>
-            </div>
-            <div className="space-y-3 p-4">
-              <div className="border-[3px] border-ink bg-blue p-4 text-white">
-                <p className="font-display text-xs font-bold uppercase tracking-wider text-yellow">Brand system</p>
-                <p className="mt-1 font-display text-2xl font-black leading-none">Name, mark, voice</p>
-                <p className="mt-2 text-sm text-white/90">One look, from the logo to the landing page.</p>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="border-[3px] border-ink bg-pink p-3 text-white">
-                  <p className="font-display text-3xl font-black leading-none">12</p>
-                  <p className="mt-1 text-sm font-medium">posts queued for Instagram</p>
+        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+          <div className="relative mx-auto min-h-[26rem] w-full sm:min-h-[28rem]">
+            <div className="studio-stamp studio-stamp-1 absolute left-0 top-6 z-10 w-36 sm:w-40">
+              <div className="neo -rotate-6 bg-paper p-3">
+                <div className="grid aspect-square place-items-center border-[3px] border-ink bg-white">
+                  <span className="font-display text-5xl font-black leading-none tracking-tight">Cv</span>
                 </div>
-                <div className="border-[3px] border-ink bg-yellow p-3">
-                  <p className="font-display text-3xl font-black leading-none">2</p>
-                  <p className="mt-1 text-sm font-medium">ad sets on Meta this week</p>
-                </div>
-              </div>
-              <div className="flex items-center justify-between border-[3px] border-ink bg-mint px-3 py-3">
-                <div>
-                  <p className="font-display text-sm font-extrabold">Google search ads</p>
-                  <p className="text-sm">Spend visible. Offer matches the page.</p>
-                </div>
-                <span className="border-[3px] border-ink bg-white px-2 py-1 font-display text-xs font-black">
-                  ON
-                </span>
+                <p className="mt-2 font-display text-xs font-bold">Mark</p>
               </div>
             </div>
-          </div>
-          <div className="neo-sm absolute -left-3 -top-4 hidden bg-orange px-3 py-2 font-display text-sm font-extrabold text-white sm:block">
-            Logo in review
-          </div>
-          <div className="neo-sm absolute -bottom-4 -right-2 bg-violet px-3 py-2 font-display text-sm font-extrabold text-white">
-            Then we launch it
+
+            <div className="studio-stamp studio-stamp-2 absolute left-20 top-0 z-20 w-56 sm:left-28 sm:w-72">
+              <div className="neo bg-white">
+                <div className="flex items-center gap-1.5 border-b-[3px] border-ink bg-paper px-2.5 py-2">
+                  <span className="size-2.5 border-2 border-ink bg-white" aria-hidden />
+                  <span className="size-2.5 border-2 border-ink bg-white" aria-hidden />
+                  <span className="size-2.5 border-2 border-ink bg-yellow" aria-hidden />
+                  <span className="ml-1 h-5 flex-1 border-[3px] border-ink bg-white" />
+                </div>
+                <div className="space-y-2 p-4">
+                  <p className="w-fit font-display text-xl font-black leading-none">The offer</p>
+                  <span className="block h-2.5 w-full bg-ink/15" />
+                  <span className="block h-2.5 w-4/5 bg-ink/15" />
+                  <span className="block h-2.5 w-2/3 bg-ink/15" />
+                </div>
+              </div>
+            </div>
+
+            <div className="studio-stamp studio-stamp-3 absolute right-0 top-36 z-30 w-36 sm:top-40 sm:w-44">
+              <div className="neo rotate-3 bg-paper p-3">
+                <div className="aspect-square border-[3px] border-ink bg-white p-2">
+                  <div className="h-1/2 border-[3px] border-ink bg-yellow" />
+                  <div className="mt-2 h-2 w-full bg-ink" />
+                  <div className="mt-1.5 h-2 w-3/4 bg-ink/20" />
+                </div>
+                <p className="mt-2 font-display text-xs font-bold">Post</p>
+              </div>
+            </div>
           </div>
         </div>
-        </motion.div>
       </div>
     </section>
   );

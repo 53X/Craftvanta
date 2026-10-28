@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Reveal } from "@/components/reveal";
 
@@ -28,12 +29,13 @@ export function Footer() {
       <div className="palette-bar h-2" aria-hidden />
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <Reveal>
-          <a href="/" className="inline-flex" aria-label="Craftvanta">
+          <Link href="/" className="inline-flex" aria-label="Craftvanta">
             <Logo variant="lockup" />
-          </a>
+          </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink/80">
-            A creative marketing agency for branding, websites, AI images and video, social, and ads.
+            A creative and digital marketing agency. Branding, websites, AI images and video, Facebook and Instagram, Google and Meta ads.
           </p>
+          <p className="mt-3 font-display text-sm font-bold">Bengaluru</p>
         </Reveal>
         {columns.map((column, index) => (
           <Reveal key={column.title} delay={0.08 * (index + 1)}>

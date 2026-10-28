@@ -4,7 +4,7 @@ const steps = [
   {
     n: "01",
     title: "Tell us the job",
-    body: "What you sell, who it is for, and how the brand should feel. A new identity, a site, content, social, ads, or the lot.",
+    body: "What you sell, who it is for, and the jobs you want: branding, a website, AI images and video, Facebook and Instagram, and Google and Meta ads.",
     tone: "bg-green",
   },
   {
@@ -40,7 +40,7 @@ const withUs = [
   "Images and video made for this brand",
   "Facebook and Instagram on a schedule",
   "Google and Meta ads tied to a real offer",
-  "A plain read on what spent and what came back",
+  "A short note on the ad spend.",
 ];
 
 export function Process() {
@@ -50,7 +50,7 @@ export function Process() {
         <Reveal>
           <p className="font-display text-sm font-extrabold uppercase tracking-[0.16em]">How it works</p>
           <h2 className="mt-3 max-w-3xl font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
-            Blank brief. Finished brand.
+            Bring the rough idea. We put it in public.
           </h2>
         </Reveal>
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
